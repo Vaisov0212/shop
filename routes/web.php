@@ -13,4 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/','SiteController@index')->name('home');
+
+Route::namespace('Admin')->name('admin')->prefix('Admin12')->group(function(){
+    Route::get('/','AdminController@index')->name('home');
+    Route::resource('products','ProductController');
+
+});
